@@ -1,6 +1,6 @@
 # Django 2.2 LTS Project
 
-Development project with Django 2.2 LTS using MVT (Model, View and Template) to course.
+Development project with Django 2.2 LTS using design pattern MVT (Model, View and Template) to course.
 - Auth
 - Templates
 - Models
