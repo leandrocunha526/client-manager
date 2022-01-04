@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block title %} Página inicial {% endblock %}
+
+{% block main %}
+
+<div class="row">
+     <div class="col"></div>
+    <div class="col-12">
+    <h1>Seja bem vindo</h1>
+    </div>
+    <div class="col-sm-6">
+        {% if user.is_authenticated %}
+            <p>Olá, {{ user.first_name }} {{ user.last_name }}</p>
+            <a href="{% url 'logout' %}">Sair</a>
+        {% else %}
+            <a href="{% url 'login' %}">Entrar</a>
+        {% endif %}
+    </div>
+</div>
+
+{% endblock %}
+
+{% block footer %}
+    <footer class="footer">
+        <div class="container">
+            <span class="text-muted">Desenvolvimento web com Django 2.2</span>
+        </div>
+    </footer>
+{% endblock %}
