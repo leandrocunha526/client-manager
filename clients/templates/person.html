@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% block title %} Listagem de clientes {% endblock %}
+
+{% block main %}
+
+<div class="row">
+    <div class="col">
+        {% if user.is_authenticated %}
+        <p>Olá, {{user.username}}
+        <a href="{% url 'logout' %}">
+            <span class="badge badge-dark">Sair</span>
+        </a>
+        </p>
+        {% endif %}
+    </div>
+</div>
+
+<div class="col-6">
+    <h3>Listagem de clientes</h3>
+    <ul class="list-group">
+        {% for person in persons %}
+        <li class="list-group-item">
+            <a href="{% url 'person_update' person.id %}">{{person.first_name}}</a>
+            <a href="{% url 'person_delete' person.id %}" class="trash-item">
+                <i class="fa fa-trash" aria-hidden="true"></i>
+            </a>
+        </li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'person_new' %}" class="btn btn-primary">Novo cliente</a>
+</div>
+
+{% endblock %}
+
+{% block footer %}
+    <footer class="footer">
+        <div class="container">
+            <span class="text-muted">Desenvolvimento web com Django 2.x</span>
+        </div>
+    </footer>
+{% endblock %}
