@@ -23,7 +23,7 @@ def persons_new(request):
 @login_required
 def persons_update(request, id):
     person = get_object_or_404(Person, pk=id)
-    form = PersonForm(request.POST or None, request.FILES or None, intance=person)
+    form = PersonForm(request.POST or None, request.FILES or None, instance=person)
 
     if form.is_valid():
         form.save()
@@ -38,4 +38,4 @@ def persons_delete(request, id):
     if request.method == 'POST':
         person.delete()
         return redirect('person_list')
-    return render(request, 'person_delete_confirm', {'person': person})
+    return render(request, 'person_delete_confirm.html', {'person': person})
