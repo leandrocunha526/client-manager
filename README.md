@@ -21,7 +21,7 @@ Development project with Django 2.2 LTS using design pattern MVT (Model, View an
 ### Create a virtualenv environment
 Install in Debian based distributions 
 
-`apt install python3-pip virtualenv python3-dev default-libmysqlclient-dev build-essential`
+`apt install python3-pip virtualenv`
 
 Create virtualenv
 
