@@ -1,0 +1,9 @@
+venv/
+db.sqlite3
+.idea/
+clients/__pycache__
+home/__pycache__
+project/__pycache__
+clients/migrations/__pycache__
+home/migrations/__pycache__
+media/
