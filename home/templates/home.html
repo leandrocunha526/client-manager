@@ -6,16 +6,16 @@
 
 <div class="row">
      <div class="col"></div>
-    <div class="col-12">
-    <h1>Seja bem vindo</h1>
-    </div>
-    <div class="col-sm-6">
+    <div class="col-sm-12">
         {% if user.is_authenticated %}
             <p>Olá, {{ user.first_name }} {{ user.last_name }}</p>
             <a href="{% url 'logout' %}">Sair</a>
         {% else %}
             <a href="{% url 'login' %}">Entrar</a>
         {% endif %}
+    </div>
+    <div class="col-6">
+    <h1>Seja bem vindo</h1>
     </div>
 </div>
 
