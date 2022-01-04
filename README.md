@@ -1,4 +1,11 @@
-# Django 2.2 LTS Project 
+# Django 2.2 LTS Project
+
+Development project with Django 2.2 LTS using MVT (Model, View and Template) to course.
+- Auth
+- Templates
+- Models
+- URLs patterns
+
 ## To run
 ### Create a virtualenv environment
 Install in Debian based distributions 
