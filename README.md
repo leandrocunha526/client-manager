@@ -19,7 +19,6 @@ Development project with Django 2.2 LTS using design pattern MVT (Model, View an
 # How it works
 
 ![Django](https://www.horadecodar.com.br/wp-content/uploads/2019/01/django-r-r.jpg)
-[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fleandrocunha526%2Fclient-manager.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2Fleandrocunha526%2Fclient-manager?ref=badge_shield)
 
 ## To run
 ### Create a virtualenv environment
