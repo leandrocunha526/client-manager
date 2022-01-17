@@ -1,19 +1,18 @@
 {% extends 'base.html' %}
 {% load bootstrap %}
 
-{% block title %} Página de login {% endblock %}
+{% block title %} Formulário de registro{% endblock %}
 
 {% block main %}
-
-    <h2>Login</h2>
+    <h3>Novo usuário</h3>
     <form method="post">
         {% csrf_token %}
         {{form|bootstrap}}
-        <button type="submit" class="btn btn-info">Login</button>
-        <p>Se você não possui uma conta e deseja fazer o <a href="/register/">cadastro</a></p
+        <button type="submit" class="btn btn-primary">Salvar</button>
+        <p>Se você já possui uma conta e deseja fazer o <a href="/accounts/login">login</a></p>
     </form>
-
 {% endblock %}
+
 
 {% block footer %}
     <footer class="footer">
