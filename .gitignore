@@ -9,3 +9,6 @@ home/migrations/__pycache__
 media/
 user/__pycache__
 user/migrations/__pycache__
+product/__pycache__/
+product/migrations/__pycache__/
+product/migrations/
