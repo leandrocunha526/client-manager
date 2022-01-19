@@ -16,7 +16,7 @@ class Person(models.Model):
     first_name = models.CharField(max_length=30)
     last_name = models.CharField(max_length=30)
     age = models.IntegerField()
-    salary = models.DecimalField(max_digits=5, decimal_places=3)
+    salary = models.DecimalField(max_digits=8, decimal_places=2)
     biography = models.TextField()
     photo = models.ImageField(upload_to='client_photos', null=True, blank=True)
     document = models.OneToOneField(Document, null=True, blank=True, on_delete=models.CASCADE)
