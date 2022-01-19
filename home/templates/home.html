@@ -9,7 +9,9 @@
     <div class="col-sm-12">
         {% if user.is_authenticated %}
             <p>Olá, {{ user.username }}</p>
-            <a href="{% url 'logout' %}">Sair</a>
+        <a href="{% url 'logout' %}">
+            <span class="badge badge-dark">Sair</span>
+        </a>
         {% else %}
             <a href="{% url 'login' %}">Entrar</a>
         {% endif %}
