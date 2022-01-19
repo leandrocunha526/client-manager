@@ -55,7 +55,7 @@ Home: http://localhost:8000
 
 Admin: http://localhost:8000/admin
 
-OBS: To access Django Admin only create user with `python manage createsuperuser`.
+OBS: To access Django Admin only create user with `python manage.py createsuperuser`.
 
 ## Requirements
 
