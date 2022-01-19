@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+{% block title %}Tabela de produtos{% endblock %}
+
+{% block main%}
+
+<div class="col-12">
+    <h3>Produtos</h3>
+     <table class="table table-dark">
+         <thead>
+         <tr>
+             <th scope="col">Id</th>
+             <th scope="col">Descrição</th>
+             <th scope="col">Preço</th>
+             <th scope="col">Editar</th>
+             <th scope="col">Apagar</th>
+         </tr>
+         </thead>
+         {% for product in product %}
+         <tbody>
+            <tr>
+                <td scope="row">{{product.id}}</td>
+                <td>{{product.description}}</td>
+                <td>{{product.price}}</td>
+                <td></td>
+                <td>
+                   <button type="submit" class="btn btn-success" onclick="location.href='{% url 'product_delete' product.id %}'">
+                       Delete
+                   </button>
+                </a>
+                </td>
+            </tr>
+         <tbody>
+         {% endfor %}
+     </table>
+</div>
+
+{% endblock %}
+
+{% block footer %}
+    <footer class="footer">
+        <div class="container">
+            <span class="text-muted">Desenvolvimento web com Django 2.2</span>
+        </div>
+    </footer>
+{% endblock %}
