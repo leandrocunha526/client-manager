@@ -40,7 +40,8 @@ INSTALLED_APPS = [
     'clients',
     'home',
     'bootstrapform',
-    'user'
+    'user',
+    'product'
 ]
 
 MIDDLEWARE = [
