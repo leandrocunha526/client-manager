@@ -13,22 +13,46 @@
         </a>
         </p>
         {% endif %}
-    </div>
 </div>
-
-<div class="col-6">
-    <h3>Listagem de clientes</h3>
-    <ul class="list-group">
-        {% for person in persons %}
-        <li class="list-group-item">
-            <a href="{% url 'person_update' person.id %}">{{person.first_name}}</a>
-            <a href="{% url 'person_delete' person.id %}" class="trash-item">
-                <i class="fa fa-trash" aria-hidden="true"></i>
-            </a>
-        </li>
-        {% endfor %}
-    </ul>
+    <div class="col-12">
+    <table class="table">
+         <thead>
+         <tr>
+             <th scope="col">Id</th>
+             <th scope="col">Nome</th>
+             <th scope="col">Sobrenome</th>
+             <th scope="col">Idade</th>
+             <th scope="col">Salário</th>
+             <th scope="col">Biografia</th>
+             <th scope="col">Editar</th>
+             <th scope="col">Apagar</th>
+         </tr>
+         </thead>
+         {% for person in persons %}
+         <tbody>
+            <tr>
+                <td scope="row">{{person.id}}</td>
+                <td>{{person.first_name}}</td>
+                <td>{{person.last_name}}</td>
+                <td>{{person.age}}</td>
+                <td>{{person.salary}}</td>
+                <td>{{person.biography}}</td>
+                <td>
+                    <button type="submit" class="btn btn-warning" onclick="location.href='{% url 'person_update' person.id %}'">
+                       Editar
+                   </button>
+                </td>
+                <td>
+                   <button type="submit" class="btn btn-success" onclick="location.href='{% url 'person_delete' person.id %}'">
+                       Delete
+                   </button>
+                </td>
+            </tr>
+         <tbody>
+         {% endfor %}
+     </table>
     <a href="{% url 'person_new' %}" class="btn btn-primary">Novo cliente</a>
+</div>
 </div>
 
 {% endblock %}
