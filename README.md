@@ -5,6 +5,8 @@
 
 Development project with Django 2.2 LTS using design pattern MVT (Model, View and Template) to course.
 
+🚧 **Client manager is under development** 🚧
+
 # Features
 
 - Admin: One of the most powerful parts of Django is its automatic admin interface. It reads metadata in your models to provide a powerful and production-ready interface that content producers can immediately use to start managing content on your site. It’s easy to set up and provides many hooks for customization.
