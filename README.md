@@ -1,4 +1,4 @@
-# Django 2.2 LTS Project
+# Client manager project with Django 2.2 LTS
 
 [![Django CI](https://github.com/leandrocunha526/client-manager/actions/workflows/django.yml/badge.svg)](https://github.com/leandrocunha526/client-manager/actions/workflows/django.yml)
 [![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fleandrocunha526%2Fclient-manager.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2Fleandrocunha526%2Fclient-manager?ref=badge_shield)
