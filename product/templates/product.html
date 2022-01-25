@@ -22,17 +22,21 @@
                 <td scope="row">{{product.id}}</td>
                 <td>{{product.description}}</td>
                 <td>{{product.price}}</td>
-                <td></td>
+                <td>
+                    <button type="submit" class="btn btn-warning" onclick="location.href='{% url 'product_update' product.id %}'">
+                       Editar
+                   </button>
+                </td>
                 <td>
                    <button type="submit" class="btn btn-success" onclick="location.href='{% url 'product_delete' product.id %}'">
                        Delete
                    </button>
-                </a>
                 </td>
             </tr>
          <tbody>
          {% endfor %}
      </table>
+     <a href="{% url 'product_new' %}" class="btn btn-primary">Novo produto</a>
 </div>
 
 {% endblock %}
