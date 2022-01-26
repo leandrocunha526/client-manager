@@ -19,7 +19,6 @@ class Person(models.Model):
     salary = models.DecimalField(max_digits=8, decimal_places=2)
     biography = models.TextField()
     photo = models.ImageField(upload_to='client_photos', null=True, blank=True)
-    document = models.OneToOneField(Document, null=True, blank=True, on_delete=models.CASCADE)
 
     def __str__(self):
         return self.first_name + ' ' + self.last_name
