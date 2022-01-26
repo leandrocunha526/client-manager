@@ -24,7 +24,7 @@ Development project with Django 2.2 LTS using design pattern MVT (Model, View an
 
 ## To run
 ### Create a virtualenv environment
-Install in Debian based distributions 
+Install in Debian based distributions
 
 `apt install python3-pip virtualenv`
 
@@ -61,7 +61,7 @@ OBS: To access Django Admin only create user with `python manage.py createsuperu
 
 ## Requirements
 
-- Python 3.5 (see release note) or higher (3.9 as of 2.2.17)
+- Python 3.5 (see release note) or higher
 - Django 2.2 - [Release Note](https://docs.djangoproject.com/en/2.2/releases/2.2/)
 - Bootstrap 4
 - Virtualenv
