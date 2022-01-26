@@ -4,28 +4,23 @@
 
 {% block main %}
 
-<div class="row">
-    <div class="col">
-        {% if user.is_authenticated %}
-        <p>Olá, {{user.username}}
-        <a href="{% url 'logout' %}">
-            <span class="badge badge-dark">Sair</span>
-        </a>
-        </p>
-        {% endif %}
+<div class="col">
+<a href="{% url 'person_new' %}" class="btn btn-primary">Novo cliente</a>
 </div>
-    <div class="col-12">
-    <table class="table">
+
+<div class="col-8">
+<table class="table">
          <thead>
          <tr>
              <th scope="col">Id</th>
-             <th scope="col">Nome</th>
-             <th scope="col">Sobrenome</th>
-             <th scope="col">Idade</th>
-             <th scope="col">Salário</th>
-             <th scope="col">Biografia</th>
-             <th scope="col">Editar</th>
-             <th scope="col">Apagar</th>
+             <th class="col">Nome</th>
+             <th class="col">Sobrenome</th>
+             <th class="col">Idade</th>
+             <th class="col">Salário</th>
+             <th class="col">Biografia</th>
+             <th class="col">Foto</th>
+             <th class="col">Editar</th>
+             <th class="col">Apagar</th>
          </tr>
          </thead>
          {% for person in persons %}
@@ -37,6 +32,7 @@
                 <td>{{person.age}}</td>
                 <td>{{person.salary}}</td>
                 <td>{{person.biography}}</td>
+                <td><a href=/media/{{person.photo}}>Visualizar</a></td>
                 <td>
                     <button type="submit" class="btn btn-warning" onclick="location.href='{% url 'person_update' person.id %}'">
                        Editar
@@ -51,8 +47,6 @@
          <tbody>
          {% endfor %}
      </table>
-    <a href="{% url 'person_new' %}" class="btn btn-primary">Novo cliente</a>
-</div>
 </div>
 
 {% endblock %}
