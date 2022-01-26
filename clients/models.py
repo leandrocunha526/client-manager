@@ -1,15 +1,6 @@
 from django.db import models
 
 
-class Document(models.Model):
-    class Meta:
-        verbose_name_plural = "Documentos"
-    num_doc = models.CharField(max_length=50)
-
-    def __str__(self):
-        return self.num_doc
-
-
 class Person(models.Model):
     class Meta:
         verbose_name_plural = "Pessoas"
