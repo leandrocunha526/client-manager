@@ -30,7 +30,7 @@ Install in Debian based distributions
 
 Install in Arch based distributions
 
-`pacman -S virtualenv python3-pip`
+`pacman -S virtualenv python-pip`
 
 Create virtualenv
 
