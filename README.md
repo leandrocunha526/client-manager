@@ -28,6 +28,10 @@ Install in Debian based distributions
 
 `apt install python3-pip virtualenv`
 
+Install in Arch based distributions
+
+`pacman -S virtualenv python3-pip`
+
 Create virtualenv
 
 `virtualenv -p python3 venv`
