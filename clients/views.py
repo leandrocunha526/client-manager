@@ -39,3 +39,9 @@ def persons_delete(request, id):
         person.delete()
         return redirect('person_list')
     return render(request, 'person_delete_confirm.html', {'person': person})
+
+
+@login_required
+def person_detail(request, id):
+    person = get_object_or_404(Person, pk=id)
+    return render(request, 'person_detail.html', {'person': person})

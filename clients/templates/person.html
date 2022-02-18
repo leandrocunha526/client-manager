@@ -15,12 +15,9 @@
              <th scope="col">Id</th>
              <th class="col">Nome</th>
              <th class="col">Sobrenome</th>
-             <th class="col">Idade</th>
-             <th class="col">Salário</th>
-             <th class="col">Biografia</th>
-             <th class="col">Foto</th>
              <th class="col">Editar</th>
              <th class="col">Apagar</th>
+             <th class="col">Detalhes</th>
          </tr>
          </thead>
          {% for person in persons %}
@@ -29,10 +26,6 @@
                 <td scope="row">{{person.id}}</td>
                 <td>{{person.first_name}}</td>
                 <td>{{person.last_name}}</td>
-                <td>{{person.age}}</td>
-                <td>{{person.salary}}</td>
-                <td>{{person.biography}}</td>
-                <td><a href=/media/{{person.photo}}>Visualizar</a></td>
                 <td>
                     <button type="submit" class="btn btn-warning" onclick="location.href='{% url 'person_update' person.id %}'">
                        Editar
@@ -41,6 +34,11 @@
                 <td>
                    <button type="submit" class="btn btn-danger" onclick="location.href='{% url 'person_delete' person.id %}'">
                        Delete
+                   </button>
+                </td>
+                <td>
+                   <button type="submit" class="btn btn-info" onclick="location.href='{% url 'person_detail' person.id %}'">
+                       Detalhes
                    </button>
                 </td>
             </tr>
