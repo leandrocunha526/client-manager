@@ -1,0 +1,70 @@
+{% extends 'base.html' %}
+
+{% block title %} Detalhes sobre cliente {% endblock %}
+
+{% block main %}
+
+<div class="col-8">
+<a href="{% url 'person_new' %}" class="btn btn-primary">Novo cliente</a>
+<a href="{% url 'person_list' %}" class="btn btn-info">Retornar para tabela</a>
+</div>
+
+<div class="col-12">
+<h1>Informações sobre o cliente {{person.first_name}}</h1>
+<table class="table">
+         <tbody>
+         <tr>
+             <td>Código:</td>
+             <td>
+                 <label>{{person.id}}</label>
+             </td>
+         </tr>
+         <tr>
+             <td>Nome:</td>
+             <td>
+                 <label>{{person.first_name}}</label>
+             </td>
+         </tr>
+          <tr>
+             <td>Sobrenome:</td>
+             <td>
+                 <label>{{person.last_name}}</label>
+             </td>
+         </tr>
+         <tr>
+             <td>Idade:</td>
+             <td>
+                 <label>{{person.age}}</label>
+             </td>
+         </tr>
+          <tr>
+             <td>Salário:</td>
+             <td>
+                 <label>{{person.salary}}</label>
+             </td>
+         </tr>
+         <tr>
+             <td>Biografia:</td>
+             <td>
+                 <label>{{person.biography}}</label>
+             </td>
+         </tr>
+         <tr>
+             <td>Imagem:</td>
+             <td>
+                 <label><a href=/media/{{person.photo}} target="_blank">Visualizar</a></label>
+             </td>
+         </tr>
+         <tbody>
+     </table>
+</div>
+
+{% endblock %}
+
+{% block footer %}
+    <footer class="footer">
+        <div class="container">
+            <span class="text-muted">Desenvolvimento web com Django 2.x</span>
+        </div>
+    </footer>
+{% endblock %}
