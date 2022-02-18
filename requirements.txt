@@ -10,6 +10,7 @@ Django==2.2
 django-bootstrap-form==3.3
 django-storages==1.12.3
 docutils==0.18.1
+gunicorn==20.1.0
 h11==0.12.0
 httpcore==0.14.3
 httpx==0.21.1
