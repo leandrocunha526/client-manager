@@ -12,6 +12,7 @@
              <th scope="col">Id</th>
              <th scope="col">Descrição</th>
              <th scope="col">Preço</th>
+             <th scope="col">Categoria</th>
              <th scope="col">Editar</th>
              <th scope="col">Apagar</th>
          </tr>
@@ -22,6 +23,7 @@
                 <td scope="row">{{product.id}}</td>
                 <td>{{product.description}}</td>
                 <td>{{product.price}}</td>
+                <td>{{product.category}}</td>
                 <td>
                     <button type="submit" class="btn btn-warning" onclick="location.href='{% url 'product_update' product.id %}'">
                        Editar
@@ -37,6 +39,7 @@
          {% endfor %}
      </table>
      <a href="{% url 'product_new' %}" class="btn btn-primary">Novo produto</a>
+     <a href="{% url 'category_new' %}" class="btn btn-primary">Nova categoria</a>
 </div>
 
 {% endblock %}

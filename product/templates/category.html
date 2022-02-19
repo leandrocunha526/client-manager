@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+
+{% block title %}Tabela de Categoria{% endblock %}
+
+{% block main%}
+
+<div class="col-12">
+    <h3>Categoria</h3>
+     <table class="table table-light">
+         <thead>
+         <tr>
+             <th scope="col">Id</th>
+             <th scope="col">Nome</th>
+             <th scope="col">Editar</th>
+             <th scope="col">Apagar</th>
+         </tr>
+         </thead>
+         {% for category in category %}
+         <tbody>
+            <tr>
+                <td>{{category.id}}</td>
+                <td>{{category.name}}</td>
+                <td>
+                    <button type="submit" class="btn btn-warning" onclick="location.href='{% url 'category_update' category.id %}'">
+                       Editar
+                   </button>
+                </td>
+                <td>
+                   <button type="submit" class="btn btn-danger" onclick="location.href='{% url 'category_delete' category.id %}'">
+                       Delete
+                   </button>
+                </td>
+            </tr>
+         <tbody>
+         {% endfor %}
+     </table>
+     <a href="{% url 'category_new' %}" class="btn btn-primary">Nova categoria</a>
+     <a href="{% url 'product_new' %}" class="btn btn-primary">Novo produto</a>
+</div>
+
+{% endblock %}
+
+{% block footer %}
+    <footer class="footer">
+        <div class="container">
+            <span class="text-muted">Desenvolvimento web com Django 2.2</span>
+        </div>
+    </footer>
+{% endblock %}
