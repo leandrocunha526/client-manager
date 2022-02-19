@@ -4,11 +4,11 @@ db.sqlite3
 clients/__pycache__
 home/__pycache__
 project/__pycache__
-clients/migrations/
 home/migrations/__pycache__
 media/
 user/__pycache__
 user/migrations/__pycache__
 product/__pycache__/
 product/migrations/__pycache__/
-product/migrations/
+.env
+clients/migrations/__pycache__/
