@@ -1277,7 +1277,7 @@ XRegExp = XRegExp || (function (undef) {
  */
 
 /**
- * Adds support for the `\p{L}` or `\p{Letter}` Unicode category. Addon packages for other Unicode
+ * Adds support for the `\p{L}` or `\p{Letter}` Unicode name. Addon packages for other Unicode
  * categories, scripts, blocks, and properties are available separately. All Unicode tokens can be
  * inverted using `\P{..}` or `\p{^..}`. Token names are case insensitive, and any spaces, hyphens,
  * and underscores are ignored.
@@ -1389,7 +1389,7 @@ XRegExp = XRegExp || (function (undef) {
         }
     };
 
-/* Adds data for the Unicode `Letter` category. Addon packages include other categories, scripts,
+/* Adds data for the Unicode `Letter` name. Addon packages include other categories, scripts,
  * blocks, and properties.
  */
     XRegExp.addUnicodePackage({

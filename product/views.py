@@ -1,7 +1,7 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.contrib.auth.decorators import login_required
-from .models import Product
-from .forms import ProductForm
+from .models import Product, Category
+from .forms import ProductForm, CategoryForm
 
 
 @login_required
@@ -39,3 +39,41 @@ def product_update(request, id):
         form.save()
         return redirect('product_list')
     return render(request, 'product_form.html', {'form': form})
+
+
+@login_required
+@login_required
+def category_new(request):
+    form = CategoryForm(request.POST or None, request.FILES or None)
+
+    if form.is_valid():
+        form.save()
+        return redirect('category_list')
+    return render(request, 'category_form.html', {'form': form})
+
+
+@login_required
+def category_list(request):
+    category = Category.objects.all().order_by('id')
+    return render(request, 'category.html', {'category': category})
+
+
+@login_required
+def category_delete(request, id):
+    category = get_object_or_404(Category, pk=id)
+
+    if request.method == 'POST':
+        category.delete()
+        return redirect('category_list')
+    return render(request, 'category_delete_confirm.html', {'category': category})
+
+
+@login_required
+def category_update(request, id):
+    category = get_object_or_404(Category, pk=id)
+    form = CategoryForm(request.POST or None, request.FILES or None, instance=category)
+
+    if form.is_valid():
+        form.save()
+        return redirect('category_list')
+    return render(request, 'category_form.html', {'form': form})
