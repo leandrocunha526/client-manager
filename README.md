@@ -70,6 +70,7 @@ OBS: To access Django Admin only create user with `python manage.py createsuperu
 - Bootstrap 4
 - Virtualenv
 - SQL Lite Browser (project uses sqlite3)
+- PostgreSQL to Heroku
 
 See [requirements.txt](requirements.txt)
 
