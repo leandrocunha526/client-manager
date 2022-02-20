@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ exception }}{% endblock %}
+
+{% block main%}
+
+<div class="col-12">
+    <h2>Página {{ request_path }} que você está buscando não foi encontrada</h2>
+</div>
+
+{% endblock %}
+
+{% block footer %}
+    <footer class="footer">
+        <div class="container">
+            <span class="text-muted">Desenvolvimento web com Django 2.2</span>
+        </div>
+    </footer>
+{% endblock %}
