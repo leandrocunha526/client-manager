@@ -7,7 +7,7 @@ Development project with Django 2.2 LTS using design pattern MVT (Model, View an
 
 # About
 
-Project to assist in the products and customers management . It was used in Gregorio Pacheco's Udemy Django course and modified by Leandro Cunha.
+Project to assist in the products and customers management. It was used in Gregorio Pacheco's Udemy Django course and modified by Leandro Cunha.
 
 🚧 **Client manager is under development** 🚧
 
