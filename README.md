@@ -1,9 +1,13 @@
-# Client manager project with Django 2.2 LTS
+# Client manager project with Django 2.2.x LTS
 
 [![Django CI](https://github.com/leandrocunha526/client-manager/actions/workflows/django.yml/badge.svg)](https://github.com/leandrocunha526/client-manager/actions/workflows/django.yml)
 [![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fleandrocunha526%2Fclient-manager.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2Fleandrocunha526%2Fclient-manager?ref=badge_shield)
 
 Development project with Django 2.2 LTS using design pattern MVT (Model, View and Template) to course.
+
+# About
+
+Project to assist in the products and customers management. It was used in Gregorio Pacheco's Udemy Django course and modified by Leandro Cunha.
 
 🚧 **Client manager is under development** 🚧
 
@@ -66,10 +70,11 @@ OBS: To access Django Admin only create user with `python manage.py createsuperu
 ## Requirements
 
 - Python 3.5 (see release note) or higher
-- Django 2.2 - [Release Note](https://docs.djangoproject.com/en/2.2/releases/2.2/)
+- Django 2.2 - [Release Notes](https://docs.djangoproject.com/en/2.2/releases/)
 - Bootstrap 4
 - Virtualenv
 - SQL Lite Browser (project uses sqlite3)
+- PostgreSQL to Heroku
 
 See [requirements.txt](requirements.txt)
 
