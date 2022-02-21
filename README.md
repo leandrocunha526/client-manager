@@ -78,10 +78,15 @@ OBS: To access Django Admin only create user with `python manage.py createsuperu
 
 See [requirements.txt](requirements.txt)
 
+# Feature tests
+
+- Sale products  
+- Export data to archives PDF or XLSX and others formats  
+- Search data in table  
+
 ## Docs
 
 - [Quick start Django](https://www.djangoproject.com/start/)
-
 
 ## License
 [![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fleandrocunha526%2Fclient-manager.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2Fleandrocunha526%2Fclient-manager?ref=badge_large)
