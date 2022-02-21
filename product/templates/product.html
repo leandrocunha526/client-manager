@@ -6,10 +6,17 @@
 
 <div class="col-12">
     <h3>Produtos</h3>
+    <form method="GET" id="search-form">
+        <input class="form-control" type="text" id="search" name="search" placeholder="Digite o nome do produto para buscar" value="{{ request.GET.search }}">
+        <button type="submit" class="btn btn-success">
+           <i class="fa fa-search"></i> Pesquisar
+        </button>
+        </form>
      <table class="table table-light">
          <thead>
          <tr>
              <th scope="col">Id</th>
+             <th scope="col">Name</th>
              <th scope="col">Descrição</th>
              <th scope="col">Preço</th>
              <th scope="col">Categoria</th>
@@ -20,7 +27,8 @@
          {% for product in product %}
          <tbody>
             <tr>
-                <td scope="row">{{product.id}}</td>
+                <td>{{product.id}}</td>
+                <td>{{product.name}}</td>
                 <td>{{product.description}}</td>
                 <td>{{product.price}}</td>
                 <td>{{product.category}}</td>

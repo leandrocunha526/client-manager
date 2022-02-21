@@ -7,7 +7,10 @@ from .forms import ProductForm, CategoryForm
 @login_required
 def product_list(request):
     products = Product.objects.all().order_by('id')
-    return render(request, 'product.html', {'product': products})
+    search = request.GET.get('search')
+    if search:
+        products = Product.objects.filter(name__icontains=search)
+    return render(request, 'product.html', {'product': products, 'search': search})
 
 
 @login_required
