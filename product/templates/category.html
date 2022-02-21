@@ -32,6 +32,14 @@
                 </td>
             </tr>
          <tbody>
+         <tfoot>
+         {% empty %}
+            <tr>
+            <td colspan="4" style="text-align: center">
+              <h5>Nenhuma categoria cadastrado</h5>
+            </td>
+          </tr>
+         </tfoot>
          {% endfor %}
      </table>
      <a href="{% url 'category_new' %}" class="btn btn-primary">Nova categoria</a>

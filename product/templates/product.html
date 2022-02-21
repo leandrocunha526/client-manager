@@ -35,7 +35,15 @@
                    </button>
                 </td>
             </tr>
-         <tbody>
+            <tbody>
+         <tfoot>
+         {% empty %}
+            <tr>
+            <td colspan="6" style="text-align: center">
+              <h5>Nenhum produto cadastrado</h5>
+            </td>
+          </tr>
+         </tfoot>
          {% endfor %}
      </table>
      <a href="{% url 'product_new' %}" class="btn btn-primary">Novo produto</a>
