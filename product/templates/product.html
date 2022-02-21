@@ -7,10 +7,14 @@
 <div class="col-12">
     <h3>Produtos</h3>
     <form method="GET" id="search-form">
-        <input class="form-control" type="text" id="search" name="search" placeholder="Digite o nome do produto para buscar" value="{{ request.GET.search }}">
+        <div class="form-group">
+        <input type="search" class="form-control" id="search" name="search" placeholder="Digite o nome do produto para buscar" value="{{ request.GET.search }}">
+        </div>
+        <div class="form-group">
         <button type="submit" class="btn btn-success">
            <i class="fa fa-search"></i> Pesquisar
         </button>
+        </div>
         </form>
      <table class="table table-light">
          <thead>
