@@ -4,17 +4,15 @@
 
 {% block main %}
 
-<div class="col">
+<div class="col-12">
 <a href="{% url 'person_new' %}" class="btn btn-primary">Novo cliente</a>
-</div>
-
-<div class="col-8">
-<table class="table">
+<table class="table table-light">
          <thead>
          <tr>
              <th scope="col">Id</th>
-             <th class="col">Nome</th>
+             <th class="col">Primeiro nome</th>
              <th class="col">Sobrenome</th>
+             <th class="col">Salário</th>
              <th class="col">Editar</th>
              <th class="col">Apagar</th>
              <th class="col">Detalhes</th>
@@ -26,6 +24,7 @@
                 <td scope="row">{{person.id}}</td>
                 <td>{{person.first_name}}</td>
                 <td>{{person.last_name}}</td>
+                <td>{{person.salary}}</td>
                 <td>
                     <button type="submit" class="btn btn-warning" onclick="location.href='{% url 'person_update' person.id %}'">
                        Editar
@@ -43,6 +42,13 @@
                 </td>
             </tr>
          <tbody>
+          {% empty %}
+            <tr>
+            <td colspan="7" style="text-align: center">
+              <h5>Nenhum cliente cadastrado</h5>
+            </td>
+          </tr>
+         </tfoot>
          {% endfor %}
      </table>
 </div>
