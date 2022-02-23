@@ -7,8 +7,9 @@
 <div class="col-12">
     <h3>Produtos</h3>
     <form method="GET" id="search-form">
+        <div class="form-group"><h5>Pesquisa</h5></div>
         <div class="form-group">
-        <input type="search" class="form-control" id="search" name="search" placeholder="Digite o nome do produto para buscar" value="{{ request.GET.search }}">
+            <input type="search" class="form-control" id="search" name="search" placeholder="Digite o nome do produto para buscar" value="{{ request.GET.search }}">
         </div>
         <div class="form-group">
         <button type="submit" class="btn btn-success">
@@ -20,7 +21,7 @@
          <thead>
          <tr>
              <th scope="col">Id</th>
-             <th scope="col">Name</th>
+             <th scope="col">Nome</th>
              <th scope="col">Descrição</th>
              <th scope="col">Preço</th>
              <th scope="col">Categoria</th>
