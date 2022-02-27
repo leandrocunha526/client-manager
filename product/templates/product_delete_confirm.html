@@ -4,7 +4,7 @@
 
 {% block main %}
 
-    <h1>Tem certeza que deseja deletar {{ product.description }}?</h1>
+    <h1>Tem certeza que deseja deletar {{ product.name }}?</h1>
     <form method="POST" enctype="multipart/form-data">
         {% csrf_token %}
         <button type="submit" class="btn btn-danger">Delete</button>
