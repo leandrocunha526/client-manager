@@ -7,7 +7,10 @@ from .forms import PersonForm
 @login_required
 def persons_list(request):
     persons = Person.objects.all()
-    return render(request, 'person.html', {'persons': persons})
+    search = request.GET.get('search')
+    if search:
+        persons = Person.objects.filter(first_name__icontains=search)
+    return render(request, 'person.html', {'persons': persons, 'search': search})
 
 
 @login_required

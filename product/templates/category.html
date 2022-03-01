@@ -6,7 +6,21 @@
 
 <div class="col-12">
     <h3>Categoria</h3>
-     <table class="table table-light">
+     <a href="{% url 'category_new' %}" class="btn btn-primary">Nova categoria</a>
+     <a href="{% url 'product_new' %}" class="btn btn-primary">Novo produto</a>
+    <form method="GET" id="search-form">
+        <div class="form-group"><h5>Pesquisa</h5></div>
+        <div class="form-group">
+            <input type="search" class="form-control" id="search" name="search" placeholder="Digite o nome da categoria para buscar" value="{{ request.GET.search }}">
+        </div>
+        <div class="form-group">
+        <button type="submit" class="btn btn-success">
+           <i class="fa fa-search"></i> Pesquisar
+        </button>
+        </div>
+        </form>
+
+    <table class="table table-light">
          <thead>
          <tr>
              <th scope="col">Id</th>
@@ -42,8 +56,6 @@
          </tfoot>
          {% endfor %}
      </table>
-     <a href="{% url 'category_new' %}" class="btn btn-primary">Nova categoria</a>
-     <a href="{% url 'product_new' %}" class="btn btn-primary">Novo produto</a>
 </div>
 
 {% endblock %}
