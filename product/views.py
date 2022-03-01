@@ -45,7 +45,6 @@ def product_update(request, id):
 
 
 @login_required
-@login_required
 def category_new(request):
     form = CategoryForm(request.POST or None, request.FILES or None)
 
@@ -58,7 +57,10 @@ def category_new(request):
 @login_required
 def category_list(request):
     category = Category.objects.all().order_by('id')
-    return render(request, 'category.html', {'category': category})
+    search = request.GET.get('search')
+    if search:
+        category = Category.objects.filter(name__icontains=search)
+    return render(request, 'category.html', {'category': category, 'search': search})
 
 
 @login_required
@@ -80,3 +82,9 @@ def category_update(request, id):
         form.save()
         return redirect('category_list')
     return render(request, 'category_form.html', {'form': form})
+
+
+@login_required
+def product_detail(request, id):
+    product = get_object_or_404(Product, pk=id)
+    return render(request, 'product_detail.html', {'product': product})

@@ -6,6 +6,8 @@
 
 <div class="col-12">
     <h3>Produtos</h3>
+    <a href="{% url 'product_new' %}" class="btn btn-primary">Novo produto</a>
+    <a href="{% url 'category_new' %}" class="btn btn-primary">Nova categoria</a>
     <form method="GET" id="search-form">
         <div class="form-group"><h5>Pesquisa</h5></div>
         <div class="form-group">
@@ -22,11 +24,10 @@
          <tr>
              <th scope="col">Id</th>
              <th scope="col">Nome</th>
-             <th scope="col">Descrição</th>
              <th scope="col">Preço</th>
-             <th scope="col">Categoria</th>
              <th scope="col">Editar</th>
              <th scope="col">Apagar</th>
+             <th scope="col">Detalhes</th>
          </tr>
          </thead>
          {% for product in product %}
@@ -34,9 +35,7 @@
             <tr>
                 <td>{{product.id}}</td>
                 <td>{{product.name}}</td>
-                <td>{{product.description}}</td>
                 <td>{{product.price}}</td>
-                <td>{{product.category}}</td>
                 <td>
                     <button type="submit" class="btn btn-warning" onclick="location.href='{% url 'product_update' product.id %}'">
                        Editar
@@ -47,20 +46,23 @@
                        Delete
                    </button>
                 </td>
+                <td>
+                   <button type="submit" class="btn btn-info" onclick="location.href='{% url 'product_detail' product.id %}'">
+                       Detalhes
+                   </button>
+                </td>
             </tr>
             <tbody>
          <tfoot>
          {% empty %}
             <tr>
-            <td colspan="7" style="text-align: center">
+            <td colspan="6" style="text-align: center">
               <h5>Nenhum produto cadastrado</h5>
             </td>
           </tr>
          </tfoot>
          {% endfor %}
      </table>
-     <a href="{% url 'product_new' %}" class="btn btn-primary">Novo produto</a>
-     <a href="{% url 'category_new' %}" class="btn btn-primary">Nova categoria</a>
 </div>
 
 {% endblock %}
