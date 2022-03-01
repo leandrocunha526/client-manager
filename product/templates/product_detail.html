@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+
+{% block title %} Detalhes sobre produto {% endblock %}
+
+{% block main %}
+
+<div class="col-8">
+<a href="{% url 'product_new' %}" class="btn btn-primary">Novo producto</a>
+<a href="{% url 'product_list' %}" class="btn btn-info">Retornar para tabela</a>
+</div>
+
+<div class="col-12">
+<h1>Informações sobre o produto {{product.name}}</h1>
+<table class="table">
+         <tbody>
+         <tr>
+             <td>Código:</td>
+             <td>
+                 <label>{{product.id}}</label>
+             </td>
+         </tr>
+         <tr>
+             <td>Nome:</td>
+             <td>
+                 <label>{{product.name}}</label>
+             </td>
+         </tr>
+         <tr>
+             <td>Preço:</td>
+             <td>
+                 <label>{{product.price}}</label>
+             </td>
+         </tr>
+          <tr>
+             <td>Categoria:</td>
+             <td>
+                 <label>{{product.category}}</label>
+             </td>
+         </tr>
+         <tr>
+             <td>Descrição:</td>
+             <td>
+                 <label>{{product.description}}</label>
+             </td>
+         </tr>
+         <tbody>
+     </table>
+</div>
+
+{% endblock %}
+
+{% block footer %}
+    <footer class="footer">
+        <div class="container">
+            <span class="text-muted">Desenvolvimento web com Django 2.x</span>
+        </div>
+    </footer>
+{% endblock %}
