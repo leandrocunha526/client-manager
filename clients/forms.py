@@ -8,7 +8,7 @@ class PersonForm(ModelForm):
         fields = ['first_name', 'last_name', 'age', 'salary', 'biography', 'photo']
         labels = {
             'first_name': ("Primeiro nome"),
-            'last_name': ("Segundo nome"),
+            'last_name': ("Sobrenome"),
             'age': ("Idade"),
             'salary': ("Salário"),
             'biography': ("Biografia"),
