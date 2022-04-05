@@ -70,7 +70,7 @@ OBS: To access Django Admin only create user with `python manage.py createsuperu
 ## Requirements
 
 - Python 3.5 (see release note) or higher
-- Django 2.2 - [Release Notes](https://docs.djangoproject.com/en/2.2/releases/)
+- Django 2.2.27 - [Release Notes](https://docs.djangoproject.com/en/2.2/releases/)
 - Bootstrap 4
 - Virtualenv
 - SQL Lite Browser (project uses sqlite3)
@@ -82,7 +82,6 @@ See [requirements.txt](requirements.txt)
 
 - Sale products  
 - Export data to archives PDF or XLSX and others formats  
-- Search data in table  
 
 ## Docs
 
