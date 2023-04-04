@@ -12,3 +12,7 @@ product/__pycache__/
 product/migrations/__pycache__/
 .env
 clients/migrations/__pycache__/
+clients/migrations
+user/migrations
+home/migrations
+product/migrations

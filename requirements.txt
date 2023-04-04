@@ -29,4 +29,3 @@ sniffio==1.2.0
 sqlparse==0.4.2
 static3==0.7.0
 urllib3==1.26.7
-whitenoise==6.0.0
