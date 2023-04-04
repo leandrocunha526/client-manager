@@ -25,7 +25,7 @@ def product_delete(request, id):
 
 @login_required
 def product_new(request):
-    form = ProductForm(request.POST or None, request.FILES or None)
+    form = ProductForm(request.POST or None)
 
     if form.is_valid():
         form.save()
@@ -46,7 +46,7 @@ def product_update(request, id):
 
 @login_required
 def category_new(request):
-    form = CategoryForm(request.POST or None, request.FILES or None)
+    form = CategoryForm(request.POST or None)
 
     if form.is_valid():
         form.save()
@@ -76,7 +76,7 @@ def category_delete(request, id):
 @login_required
 def category_update(request, id):
     category = get_object_or_404(Category, pk=id)
-    form = CategoryForm(request.POST or None, request.FILES or None, instance=category)
+    form = CategoryForm(request.POST or None, instance=category)
 
     if form.is_valid():
         form.save()
