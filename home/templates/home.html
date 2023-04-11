@@ -7,16 +7,13 @@
 <div class="jumbotron">
     <div class="col-sm-12">
         {% if user.is_authenticated %}
-            <p>Olá, {{ user.username }}</p>
-        <a href="{% url 'logout' %}">
-            <span class="badge badge-dark">Sair</span>
-        </a>
+            <p>Olá, {{ user.username }}!</p>
         {% else %}
             <a href="{% url 'login' %}">Entrar</a>
         {% endif %}
     </div>
     <div class="col-8">
-    <h1>Seja bem vindo</h1>
+    <h1>Seja bem vindo!</h1>
     </div>
 </div>
 
@@ -25,7 +22,7 @@
 {% block footer %}
     <footer class="footer">
         <div class="container">
-            <span class="text-muted">Desenvolvimento web com Django 2.2</span>
+            <span class="text-muted">Desenvolvimento web com Django 4.2</span>
         </div>
     </footer>
 {% endblock %}

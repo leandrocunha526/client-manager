@@ -10,7 +10,6 @@ user/__pycache__
 user/migrations/__pycache__
 product/__pycache__/
 product/migrations/__pycache__/
-.env
 clients/migrations/__pycache__/
 clients/migrations
 user/migrations

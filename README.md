@@ -1,12 +1,8 @@
-# Client manager project with Django 2.2.x LTS
-
-🚧 The project has old and unsupported dependencies. 🚧
-
-NOTE: The migration is being studied to be carried out and resolve application security issues in addition to continuity of support.
+# Client manager project with Django 4.2.x LTS
 
 [![Django CI](https://github.com/leandrocunha526/client-manager/actions/workflows/django.yml/badge.svg)](https://github.com/leandrocunha526/client-manager/actions/workflows/django.yml)
 
-Development project with Django 2.2 LTS using design pattern MVT (Model, View and Template) to course.
+Development project with Django 4.2.x LTS using design pattern MVT (Model, View and Template) to course.
 
 ## About
 
@@ -54,7 +50,11 @@ Install dependencies with pip:
 
 Make migrations:
 
+Create folders in clients and product with migration name create file `__init__.py`.
+
 `python3 manage.py makemigrations`
+
+If you do not carry out the above process, the migrations will not be created and the project will have a 500 internal server error.
 
 Run migrate:
 
@@ -72,8 +72,8 @@ OBS: To access Django Admin only create user with: `python manage.py createsuper
 
 ## Requirements
 
-- Python 3.5 (see release note) or higher
-- Django 2.2.27 - [Release Notes](https://docs.djangoproject.com/en/2.2/releases/)
+- Python 3.8 (see release note) or higher
+- Django 4.2.x LTS - [Release Notes](https://docs.djangoproject.com/en/4.2/releases)
 - Bootstrap 4
 - Virtualenv
 - SQL Lite Browser (project uses sqlite3) to development environment.
