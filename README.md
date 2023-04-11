@@ -1,14 +1,18 @@
 # Client manager project with Django 2.2.x LTS
 
+🚧 The project has old and unsupported dependencies. 🚧
+
+NOTE: The migration is being studied to be carried out and resolve application security issues in addition to continuity of support.
+
 [![Django CI](https://github.com/leandrocunha526/client-manager/actions/workflows/django.yml/badge.svg)](https://github.com/leandrocunha526/client-manager/actions/workflows/django.yml)
 
 Development project with Django 2.2 LTS using design pattern MVT (Model, View and Template) to course.
 
-# About
+## About
 
 Project to assist in the products and customers management. It was used in Gregorio Pacheco's Udemy Django course and modified by Leandro Cunha.
 
-# Features
+## Features
 
 - Admin: One of the most powerful parts of Django is its automatic admin interface. It reads metadata in your models to provide a powerful and production-ready interface that content producers can immediately use to start managing content on your site. It’s easy to set up and provides many hooks for customization.
 - Auth: Django comes with a full-featured and secure authentication system. It handles user accounts, groups, permissions and cookie-based user sessions. This lets you easily build sites that allow users to create accounts and safely log in/out.
@@ -19,50 +23,52 @@ Project to assist in the products and customers management. It was used in Grego
 - Models: A model is the single, definitive source of information about your data. It contains the essential fields and behaviors of the data you’re storing. Generally, each model maps to a single database table.
 - Internationalization: Django offers full support for translating text into different languages, plus locale-specific formatting of dates, times, numbers, and time zones. It lets developers and template authors specify which parts of their apps should be translated or formatted for local languages and cultures, and it uses these hooks to localize web applications for particular users according to their preferences.
 
-# How it works
+## How it works
 
 ![Django](https://www.horadecodar.com.br/wp-content/uploads/2019/01/django-r-r.jpg)
 
-## To run
-### Create a virtualenv environment
-Install in Debian based distributions
+## How to run
+
+### Create a environment with virtualenv
+
+Install in Debian based distributions:
 
 `apt install python3-pip virtualenv`
 
-Install in Arch based distributions
+Install in Arch based distributions:
 
 `pacman -S virtualenv python-pip`
 
-Create virtualenv
+Create virtualenv:
 
 `virtualenv -p python3 venv`
 
-Set virtualenv environment
+Set virtualenv environment:
 
 `. venv/bin/activate`
 
-### Install dependencies with pip
+Install dependencies with pip:
 `pip install -r requirements.txt`
 
 ### Migrate database
 
-Make migrations
+Make migrations:
 
 `python3 manage.py makemigrations`
 
-Run migrate
+Run migrate:
 
 `python manage.py migrate`
 
-Run server
+Run server:
 
 `python manage.py runserver`
 
-Home: http://localhost:8000
+Link: <http://localhost:8000>
 
-Admin: http://localhost:8000/admin
+Admin: <http://localhost:8000/admin>
 
-OBS: To access Django Admin only create user with `python manage.py createsuperuser`.
+OBS: To access Django Admin only create user with: `python manage.py createsuperuser`.
 
 ## Requirements
 
@@ -70,15 +76,10 @@ OBS: To access Django Admin only create user with `python manage.py createsuperu
 - Django 2.2.27 - [Release Notes](https://docs.djangoproject.com/en/2.2/releases/)
 - Bootstrap 4
 - Virtualenv
-- SQL Lite Browser (project uses sqlite3)
-- PostgreSQL to Heroku
+- SQL Lite Browser (project uses sqlite3) to development environment.
+- PostgreSQL
 
 See [requirements.txt](requirements.txt)
-
-# Feature tests
-
-- Sale products  
-- Export data to archives PDF or XLSX and others formats  
 
 ## Docs
 
