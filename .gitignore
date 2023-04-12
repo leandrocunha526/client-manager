@@ -15,3 +15,6 @@ clients/migrations
 user/migrations
 home/migrations
 product/migrations
+/sales/migrations/
+.env
+sales/__pycache__/

@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block title %} Confirmação de exclusão de item {% endblock %}
+
+{% block main %}
+<h2>Tem certeza que deseja deletar o item de código: {{ item.id }}?</h2>
+
+<form action="{% url 'delete-item-sale' item.id %}" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <button type="submit" class="btn btn-danger">Confirmar</button>
+</form>
+{% endblock %}

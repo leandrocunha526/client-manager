@@ -44,7 +44,8 @@ INSTALLED_APPS = [
     'home',
     'bootstrapform',
     'user',
-    'product'
+    'product',
+    'sales'
 ]
 
 MIDDLEWARE = [
@@ -132,7 +133,7 @@ MEDIA_ROOT = 'media'
 
 LOGIN_URL = '/login/'
 
-LOGIN_REDIRECT_URL = 'person_list'
+LOGIN_REDIRECT_URL = 'home'
 
 # Absolute path to the directory static files should be collected to.
 # Don't put anything in this directory yourself; store your static files
@@ -141,7 +142,7 @@ LOGIN_REDIRECT_URL = 'person_list'
 # STATIC_ROOT is the single root directory from where the Django application
 # will serve the static files in production. Empty to development environment.
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
-STATIC_ROOT = ''
+# STATIC_ROOT = ''
 
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'statics'),

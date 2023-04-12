@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% load bootstrap %}
+
+{% block title %}Registro de itens para vendas{% endblock %}
+
+{% block main %}
+<div class="col-12">
+    <h1>Registro de itens para vendas</h1>
+    <a href="{% url 'item-list' %}" class="btn btn-info">Lista de itens cadastrados</a>
+    <a href="{% url 'sale-list' %}" class="btn btn-info">Lista de vendas cadastrados</a>
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form_item|bootstrap }}
+        <button type="submit" class="btn btn-primary">Enviar</button>
+    </form>
+</div>
+{% endblock %}
+
+{% block footer %}
+    <footer class="footer">
+        <div class="container">
+            <span class="text-muted">Desenvolvimento web com Django 4.2</span>
+        </div>
+    </footer>
+{% endblock %}

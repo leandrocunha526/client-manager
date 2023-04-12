@@ -1,0 +1,73 @@
+{% extends 'base.html' %}
+
+{% block title %}Tabela de vendas{% endblock %}
+
+{% block main %}
+    <div class="col-12">
+    <h2>Lista de vendas</h2>
+    <button type="submit" class="btn btn-primary" onclick="location.href='{% url 'new-sale' %}'">Nova venda</button>
+    <button type="submit" class="btn btn-primary" onclick="location.href='{% url 'new-item' %}'">Registro de itens para vendas</button>
+    <button type="submit" class="btn btn-primary" onclick="location.href='{% url 'item-list' %}'">Lista de itens vendidos</button>
+    <button type="submit" class="btn btn-primary" onclick="location.href='{% url 'stats' %}'">Estatísticas</button>
+    <button type="submit" class="btn btn-primary" onclick="location.href='{% url 'product_new' %}'">Cadastrar produtos</button>
+    <button type="submit" class="btn btn-primary" onclick="location.href='{% url 'person_new' %}'">Cadastrar cliente</button>
+    <button type="submit" class="btn btn-primary" onclick="location.href='{% url 'category_new' %}'">Cadastrar categoria</button>
+    <form method="GET" id="search-form">
+        <div class="form-group"><h5>Pesquisa por data</h5></div>
+        <div class="form-group">
+            <input type="date" class="form-control" id="search" name="search" value="{{ request.GET.search }}">
+        </div>
+        <div class="form-group">
+        <button type="submit" class="btn btn-success">
+           <i class="fa fa-search"></i> Pesquisar
+        </button>
+        </div>
+    </form>
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Id</th>
+                <th scope="col">Valor</th>
+                <th scope="col">Status</th>
+                <th scope="col">Detalhes</th>
+                <th scope="col">Editar</th>
+                <th scope="col">Excluir</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for sale in sales %}
+            <tr>
+                <td>{{ sale.id }}</td>
+                <td>R${{ sale.total }}</td>
+                <td>{{ sale.status }}</td>
+                <td>
+                    <button type="submit" class="btn btn-info" onclick="location.href='{% url 'sale-detail' sale.id %}'">Detalhes</button>
+                </td>
+                <td>
+                    <button type="submit" class="btn btn-warning" onclick="location.href='{% url 'sale-update' sale.id %}'">Editar</button>
+                </td>
+                <td>
+                    <button type="submit" class="btn btn-danger" onclick="location.href='{% url 'delete-sale' sale.id %}'">Excluir</button>
+                </td>
+            </tr>
+        </tbody>
+            <tfoot>
+            {% empty %}
+            <tr>
+            <td colspan="6" style="text-align: center">
+              <h5>Nenhuma venda cadastrada</h5>
+            </td>
+          </tr>
+         </tfoot>
+        {% endfor %}
+    </table>
+    </div>
+{% endblock %}
+
+{% block footer %}
+    <footer class="footer">
+        <div class="container">
+            <span class="text-muted">Desenvolvimento web com Django 4.2</span>
+        </div>
+    </footer>
+{% endblock %}
