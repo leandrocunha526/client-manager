@@ -6,7 +6,7 @@ Development project with Django 4.2.x LTS using design pattern MVT (Model, View 
 
 ## About
 
-Project to assist in the products and customers management. It was used in Gregorio Pacheco's Udemy Django course and modified by Leandro Cunha.
+Project to assist in the products, sales and customers management. It was used in Gregorio Pacheco's Udemy Django course and modified by Leandro Cunha.
 
 ## Features
 
@@ -50,7 +50,7 @@ Install dependencies with pip:
 
 Make migrations:
 
-Create folders in clients and product with migration name create file `__init__.py`.
+Create folders in clients, sales and product with migration name create file `__init__.py`.
 
 `python3 manage.py makemigrations`
 

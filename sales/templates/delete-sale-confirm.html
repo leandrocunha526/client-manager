@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block title %} Confirmação de exclusão de venda {% endblock %}
+
+{% block main %}
+<h2>
+  Tem certeza que deseja deletar venda de código {{ sale.id }} com status {{ sale.status }}?
+</h2>
+<h1>Lembretes</h1>
+<p>Não será executado caso exista itens.</p>
+<p>Esta ação é irreversível e removerá o registro para sempre.</p>
+
+<form action="{% url 'delete-sale' sale.id %}" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <button type="submit" class="btn btn-danger">Confirmar</button>
+</form>
+{% endblock %}

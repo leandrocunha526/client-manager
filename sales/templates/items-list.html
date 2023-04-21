@@ -1,0 +1,71 @@
+{% extends 'base.html' %}
+
+{% block title %}Tabela de itens{% endblock %}
+
+{% block main %}
+    <div class="col-12">
+    <h1>Lista de itens vendidos</h1>
+    <button type="submit" class="btn btn-primary" onclick="location.href='{% url 'new-sale' %}'">Nova venda</button>
+    <button type="submit" class="btn btn-primary" onclick="location.href='{% url 'new-item' %}'">Registro de itens para vendas</button>
+    <button type="submit" class="btn btn-primary" onclick="location.href='{% url 'sale-list' %}'">Lista de vendas</button>
+    <form method="GET" id="search-form">
+        <div class="form-group"><h5>Pesquisa por nome</h5></div>
+        <div class="form-group">
+            <input type="search" placeholder="Digite o nome" class="form-control" id="search" name="search" value="{{ request.GET.search }}">
+        </div>
+        <div class="form-group">
+        <button type="submit" class="btn btn-success">
+           <i class="fa fa-search"></i> Pesquisar
+        </button>
+        </div>
+        </form>
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Id</th>
+                <th scope="col">Produto</th>
+                <th scope="col">Quantidade</th>
+                <th scope="col">Venda</th>
+                <th scope="col">Detalhes</th>
+                <th scope="col">Editar</th>
+                <th scope="col">Excluir</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for item in items %}
+            <tr>
+                <td>{{ item.id }}</td>
+                <td>{{ item.products.name }}</td>
+                <td>{{ item.quantity }}</td>
+                <td>{{ item.sales.id }}</td>
+                <td>
+                    <button type="submit" class="btn btn-info" onclick="location.href='{% url 'item-detail' item.id %}'">Detalhes</button>
+                </td>
+                <td>
+                    <button type="submit" class="btn btn-warning" onclick="location.href='{% url 'item-update' item.id %}'">Editar</button>
+                </td>
+                <td>
+                    <button type="submit" class="btn btn-danger" onclick="location.href='{% url 'delete-item-sale' item.id %}'">Excluir</button>
+                </td>
+            </tr>
+        </tbody>
+            <tfoot>
+            {% empty %}
+            <tr>
+            <td colspan="7" style="text-align: center">
+              <h5>Nenhum item cadastrado</h5>
+            </td>
+          </tr>
+         </tfoot>
+        {% endfor %}
+    </table>
+    </div>
+{% endblock %}
+
+{% block footer %}
+    <footer class="footer">
+        <div class="container">
+            <span class="text-muted">Desenvolvimento web com Django 4.2</span>
+        </div>
+    </footer>
+{% endblock %}

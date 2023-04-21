@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block title %}Estatísticas{% endblock %}
+
+{% block main %}
+<div class="col-12">
+    <h2>Estatísticas</h2>
+    <strong>Os valores apresentados são calculados automaticamente pelo sistema!</strong>
+    <ul>
+        <li>Média: {{ total__avg }}</li>
+        <li>Desconto de cobranças em média: {{ discount__avg }}</li>
+        <li>Média de imposto pago: {{ tax__avg }}</li>
+        <li>Menor valor: {{ min }}</li>
+        <li>Maior valor: {{ max }}</li>
+        <li>Número total de pedidos: {{ num_sale }}</li>
+    </ul>
+</div>
+{% endblock %}
+
+{% block footer %}
+    <footer class="footer">
+        <div class="container">
+            <span class="text-muted">Desenvolvimento web com Django 4.2</span>
+        </div>
+    </footer>
+{% endblock %}

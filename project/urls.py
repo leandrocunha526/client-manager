@@ -21,6 +21,7 @@ from clients import urls as client_urls
 from home import urls as home_urls
 from user import urls as register_urls
 from product import urls as product_urls
+from sales import urls as sales_urls
 
 urlpatterns = [
     path('', include(home_urls)),
@@ -29,4 +30,5 @@ urlpatterns = [
     path('accounts/', include('django.contrib.auth.urls')),
     path('register/', include(register_urls)),
     path('product/', include(product_urls)),
+    path('sales/', include(sales_urls)),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

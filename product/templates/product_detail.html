@@ -5,12 +5,14 @@
 {% block main %}
 
 <div class="col-8">
-<a href="{% url 'product_new' %}" class="btn btn-primary">Novo producto</a>
+<a href="{% url 'product_new' %}" class="btn btn-primary">Novo produto</a>
 <a href="{% url 'product_list' %}" class="btn btn-info">Retornar para tabela</a>
 </div>
 
 <div class="col-12">
-<h1>Informações sobre o produto {{product.name}}</h1>
+    <h1>Detalhes de produto</h1>
+    <p><b>Nome:</b> {{ product.name }}</p>
+    <p><b>Categoria do produto:</b> {{ product.category.name }}</p>
 <table class="table">
          <tbody>
          <tr>
@@ -28,7 +30,7 @@
          <tr>
              <td>Preço:</td>
              <td>
-                 <label>{{product.price}}</label>
+                 <label>R${{product.price}}</label>
              </td>
          </tr>
           <tr>
@@ -41,6 +43,12 @@
              <td>Descrição:</td>
              <td>
                  <label>{{product.description}}</label>
+             </td>
+         </tr>
+         <tr>
+             <td>Quantidade:</td>
+             <td>
+                 <label>{{product.quantity}}</label>
              </td>
          </tr>
          <tbody>
