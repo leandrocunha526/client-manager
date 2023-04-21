@@ -5,12 +5,13 @@ from .models import Product, Category
 class ProductForm(ModelForm):
     class Meta:
         model = Product
-        fields = ['name', 'price', 'category', 'description']
+        fields = ['name', 'price', 'category', 'description', 'quantity']
         labels = {
             'name': ("Nome"),
             'description': ("Descrição"),
             'price': ("Preço"),
-            'category': ("Categoria")
+            'category': ("Categoria"),
+            'quantity': ("Quantidade")
         }
 
 

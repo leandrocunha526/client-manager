@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+
+{% block title %} Detalhes sobre item {% endblock %}
+
+{% block main %}
+
+<div class="col-8">
+<a href="{% url 'new-item' %}" class="btn btn-primary">Novo item</a>
+<a href="{% url 'item-list' %}" class="btn btn-info">Retornar para tabela</a>
+</div>
+
+<div class="col-12">
+    <h1>Detalhes de item</h1>
+    <p><b>Nome do produto:</b> <a href="{% url 'product_detail' item.products.id%}">{{item.products.name}}</a></p>
+    <p><b>Categoria do produto:</b> {{ item.products.category.name }}</p>
+    <button type="submit" class="btn btn-primary" onclick="location.href='{% url 'generate_item_pdf' item.id %}'">Gerar PDF</button>
+<table class="table">
+         <tbody>
+         <tr>
+             <td>Código:</td>
+             <td>
+                 <label>{{item.id}}</label>
+             </td>
+         </tr>
+         <tr>
+             <td>Preço:</td>
+             <td>
+                 <label>R${{item.products.price}}</label>
+             </td>
+         </tr>
+         <tr>
+             <td>Desconto:</td>
+             <td>
+                 <label>{{item.discount}}</label>
+             </td>
+         </tr>
+          <tr>
+             <td>Venda (clique para detalhes):</td>
+             <td>
+                 <label><a href="{% url 'sale-detail' item.sales.id %}">{{item.sales.id}}</a></label>
+             </td>
+         </tr>
+         <tr>
+             <td>Quantidade:</td>
+             <td>
+                 <label>{{item.quantity}}</label>
+             </td>
+         </tr>
+         <tbody>
+     </table>
+</div>
+{% endblock %}
+
+{% block footer %}
+    <footer class="footer">
+        <div class="container">
+            <span class="text-muted">Desenvolvimento web com Django 2.x</span>
+        </div>
+    </footer>
+{% endblock %}

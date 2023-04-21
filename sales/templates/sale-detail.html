@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+
+{% block title %} Detalhes sobre venda {% endblock %}
+
+{% block main %}
+
+<div class="col-8">
+<a href="{% url 'new-sale' %}" class="btn btn-primary">Nova venda</a>
+<a href="{% url 'sale-list' %}" class="btn btn-info">Retornar para tabela</a>
+</div>
+
+<div class="col-12">
+    <h1>Detalhes de venda</h1>
+    <button type="submit" class="btn btn-primary" onclick="location.href='{% url 'generate_sale_pdf' sale.id %}'">Gerar PDF</button>
+    <p><b>Estado (status da venda):</b> {{ sale.status }}</p>
+<table class="table">
+         <tbody>
+         <tr>
+             <td>Código:</td>
+             <td>
+                 <label>{{sale.id}}</label>
+             </td>
+         </tr>
+         <tr>
+             <td>Impostos:</td>
+             <td>
+                 <label>R${{sale.tax}}</label>
+             </td>
+         </tr>
+         <tr>
+             <td>Descontos a cobrar:</td>
+             <td>
+                 <label>R${{sale.discount}}</label>
+             </td>
+         </tr>
+         <tr>
+             <td>Cliente:</td>
+             <td>
+                 <label>{{sale.person.first_name}} {{sale.person.last_name}}</label>
+             </td>
+         </tr>
+            <tr>
+             <td>Data:</td>
+             <td>
+                 <label>{{sale.datetime}}</label>
+             </td>
+         </tr>
+         <tr>
+             <td>Total (calculado automaticamente):</td>
+             <td>
+                 <label>R${{sale.total}}</label>
+             </td>
+         </tr>
+         <tbody>
+     </table>
+</div>
+{% endblock %}
+
+{% block footer %}
+    <footer class="footer">
+        <div class="container">
+            <span class="text-muted">Desenvolvimento web com Django 2.x</span>
+        </div>
+    </footer>
+{% endblock %}
