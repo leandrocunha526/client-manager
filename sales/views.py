@@ -27,6 +27,7 @@ def sale_list(request):
     search = request.GET.get('search')
     if search:
         sales = Sale.objects.filter(datetime__icontains=search)
+        sales = Sale.objects.filter(status__icontains=search)
     return render(request, 'sale-list.html', {'sales': sales})
 
 

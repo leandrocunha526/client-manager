@@ -13,11 +13,20 @@
     <button type="submit" class="btn btn-primary" onclick="location.href='{% url 'person_new' %}'">Cadastrar cliente</button>
     <button type="submit" class="btn btn-primary" onclick="location.href='{% url 'category_new' %}'">Cadastrar categoria</button>
     <form method="GET" id="search-form">
-        <div class="form-group"><h5>Pesquisa por data</h5></div>
         <div class="form-group">
+        <h3>Buscas</h3>
+            <label>Por data</label>
             <input type="date" class="form-control" id="search" name="search" value="{{ request.GET.search }}">
         </div>
-        <div class="form-group">
+        <div class="form-group">    
+            <label>Por status</label>
+            <select class="form-control" id="search" name="search" value="{{ request.GET.search }}">
+                <option value="">Selecione uma opção</option>
+                <option value="Criado">Criado</option>
+                <option value="Pago">Pago</option>
+                <option value="Enviado">Enviado</option>
+                <option value="Devolveu">Devolveu</option>
+            </select>
         <button type="submit" class="btn btn-success">
            <i class="fa fa-search"></i> Pesquisar
         </button>
