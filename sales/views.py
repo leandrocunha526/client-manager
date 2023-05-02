@@ -9,6 +9,7 @@ from reportlab.platypus import SimpleDocTemplate, Table, TableStyle
 from django.http import HttpResponse
 
 
+@login_required
 def generate_pdf(request, id):
     sale = Sale.objects.get(id=id)
     item = Item.objects.get(sales_id=id)
