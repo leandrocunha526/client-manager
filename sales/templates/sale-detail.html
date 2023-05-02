@@ -11,6 +11,7 @@
 
 <div class="col-12">
     <h1>Detalhes de venda</h1>
+    <button type="submit" class="btn btn-primary" onclick="location.href='{% url 'generate_pdf' sale.id %}'">Gerar PDF</button>
     <p><b>Estado (status da venda):</b> {{ sale.status }}</p>
 <table class="table">
          <tbody>

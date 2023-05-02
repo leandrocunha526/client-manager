@@ -3,6 +3,56 @@ from django.views import View
 from sales.forms import SaleForm, ItemForm
 from sales.models import Sale, Item
 from django.contrib.auth.decorators import login_required
+from reportlab.lib.pagesizes import A4
+from reportlab.lib import colors
+from reportlab.platypus import SimpleDocTemplate, Table, TableStyle
+from django.http import HttpResponse
+
+
+def generate_pdf(request, id):
+    sale = Sale.objects.get(id=id)
+    item = Item.objects.get(sales_id=id)
+    data = [["Detalhes da venda"],
+    ["Código da venda", sale.id],
+    ["Imposto", sale.tax],
+    ["Total", sale.total],
+    ["Desconto", sale.discount],
+    ["Criado em", sale.datetime],
+    ["Código do cliente", sale.person.id],
+    ["Itens", item.products.name],
+    ["Cliente", sale.person.first_name + ' ' + sale.person.last_name],
+    ["Status", sale.status]]
+
+    response = HttpResponse(content_type='application/pdf')
+    response['Content-Disposition'] = 'attachment; filename="data.pdf"'
+
+    pdf = SimpleDocTemplate(
+        response,
+        pagesizes=A4
+    )
+
+    table = Table(data)
+    table.setStyle(TableStyle([
+        ('BACKGROUND', (0, 0), (-1, 0), colors.grey),
+        ('TEXTCOLOR', (0, 0), (-1, 0), colors.whitesmoke),
+        ('ALIGN', (0, 0), (-1, 0), 'CENTER'),
+        ('FONTNAME', (0, 0), (-1, 0), 'Helvetica-Bold'),
+        ('FONTSIZE', (0, 0), (-1, 0), 12),
+        ('BOTTOMPADDING', (0, 0), (-1, 0), 50),
+        ('BACKGROUND', (0, 1), (-1, -1), colors.beige),
+        ('TEXTCOLOR', (0, 1), (-1, -1), colors.black),
+        ('FONTNAME', (0, 1), (-1, -1), 'Helvetica'),
+        ('FONTSIZE', (0, 1), (-1, -1), 12),
+        ('BOTTOMPADDING', (0, 1), (-1, -1), 50),
+        ('VALIGN', (0, 0), (-1, -1), 'MIDDLE'),
+        ('GRID', (0, 0), (-1, -1), 0.5, colors.grey),
+    ]))
+
+    elements = []
+    elements.append(table)
+    pdf.build(elements)
+
+    return response
 
 
 class StatsView(View):

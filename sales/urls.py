@@ -1,6 +1,6 @@
 from django.urls import path
 from .views import sale_list, DeleteSale, DeleteItemSale, new_sale, item_list, new_item, item_detail, sale_detail, \
-    sale_update, item_update, StatsView
+    sale_update, item_update, StatsView, generate_pdf
 
 urlpatterns = [
     path('list/', sale_list, name='sale-list'),
@@ -13,5 +13,6 @@ urlpatterns = [
     path('detail/<int:id>/', sale_detail, name='sale-detail'),
     path('edit/<int:id>/', sale_update, name='sale-update'),
     path('item/edit/<int:id>/', item_update, name='item-update'),
-    path('stats/', StatsView.as_view(), name='stats')
+    path('stats/', StatsView.as_view(), name='stats'),
+    path('pdf/<int:id>', generate_pdf, name='generate_pdf'),
 ]
