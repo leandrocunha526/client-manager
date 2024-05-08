@@ -1,0 +1,76 @@
+{% extends 'base.html' %}
+
+{% block title %}Tabela de Fornecedor{% endblock %}
+
+{% block main%}
+
+<div class="col-12">
+    <h3>Fornecedor</h3>
+     <a href="{% url 'supplier-form' %}" class="btn btn-primary">Novo fornecedor</a>
+    <form method="GET" id="search-form">
+        <div class="form-group"><h5>Pesquisa</h5></div>
+        <div class="form-group">
+            <input type="search" class="form-control" id="search" name="search" placeholder="Digite o nome do fornecedor para buscar" value="{{ request.GET.search }}">
+        </div>
+        <div class="form-group">
+        <button type="submit" class="btn btn-success">
+           <i class="fa fa-search"></i> Pesquisar
+        </button>
+        </div>
+        </form>
+
+    <table class="table table-light">
+         <thead>
+         <tr>
+             <th scope="col">Id</th>
+             <th scope="col">Nome</th>
+             <th scope="col">CNPJ</th>
+             <th scope="col">Detalhes</th>
+             <th scope="col">Editar</th>
+             <th scope="col">Apagar</th>
+         </tr>
+         </thead>
+         {% for supplier in supplier %}
+         <tbody>
+            <tr>
+                <td>{{supplier.id}}</td>
+                <td>{{supplier.name}}</td>
+                <td>{{supplier.cnpj}}</td>
+                <td>
+                    <button type="submit" class="btn btn-info" onclick="location.href='{% url 'supplier-detail' supplier.id %}'">
+                       Detalhes
+                   </button>
+                </td>
+                <td>
+                    <button type="submit" class="btn btn-warning" onclick="location.href='{% url 'supplier-update' supplier.id %}'">
+                       Editar
+                   </button>
+                </td>
+                <td>
+                   <button type="submit" class="btn btn-danger" onclick="location.href='{% url 'supplier-delete' supplier.id %}'">
+                       Delete
+                   </button>
+                </td>
+            </tr>
+         <tbody>
+         <tfoot>
+         {% empty %}
+            <tr>
+            <td colspan="6" style="text-align: center">
+              <h5>Nenhum fornecedor cadastrado</h5>
+            </td>
+          </tr>
+         </tfoot>
+         {% endfor %}
+     </table>
+</div>
+
+{% endblock %}
+
+{% block footer %}
+    <footer class="footer">
+        <div class="container">
+            <span class="text-muted">Desenvolvimento web com Django 4.2</span>
+        </div>
+    </footer>
+{% endblock %}
