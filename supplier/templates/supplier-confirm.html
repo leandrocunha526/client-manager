@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block title %} Confirmação de exclusão de fornecedor {% endblock %}
+
+{% block main %}
+
+    <h1>Tem certeza que deseja deletar {{ supplier.name }}?</h1>
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <button type="submit" class="btn btn-danger">Delete</button>
+        <a href="{% url 'supplier-list' %}">Voltar para listagem</a>
+    </form>
+{% endblock %}

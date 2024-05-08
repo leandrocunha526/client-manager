@@ -1,0 +1,121 @@
+{% extends 'base.html' %}
+
+{% block title %}Detalhes do fornecedor {% endblock %}
+
+{% block main %}
+
+<div class="col-8">
+  <a href="{% url 'supplier-form' %}" class="btn btn-primary"
+    >Novo fornecedor</a
+  >
+  <a href="{% url 'supplier-list' %}" class="btn btn-info"
+    >Retornar para tabela</a
+  >
+</div>
+
+<div class="col-12">
+  <h1>Detalhes do fornecedor {{supplier.name}}</h1>
+  <table class="table">
+    <tbody>
+      <tr>
+        <td>Código:</td>
+        <td>
+          <label>{{supplier.id}}</label>
+        </td>
+      </tr>
+      <tr>
+        <td>Nome:</td>
+        <td>
+          <label>{{supplier.name}}</label>
+        </td>
+      </tr>
+      <tr>
+        <td>CNPJ:</td>
+        <td>
+          <label>{{supplier.cnpj}}</label>
+          <br/>
+           <a
+            href="https://www.invertexto.com/consulta-cnpj"
+            class="btn btn-info"
+            target="_blank"
+            >Mais informações sobre este CNPJ</a>
+        </td>
+      </tr>
+      <tr>
+        <td>Cliente:</td>
+        <td>
+          <label>{{supplier.email}}</label>
+        </td>
+      </tr>
+      <tr>
+        <td>Telefone:</td>
+        <td>
+          <label>{{supplier.phone_number}}</label>
+        </td>
+      </tr>
+      <tr>
+        <td>Rua</td>
+        <td>
+          <label>{{supplier.street_address}}</label>
+        </td>
+      </tr>
+      <tr>
+        <td>Número:</td>
+        <td>
+          <label>{{supplier.number}}</label>
+        </td>
+      </tr>
+      <tr>
+        <td>Cidade:</td>
+        <td>
+          <label>{{supplier.city}}</label>
+        </td>
+      </tr>
+      <tr>
+        <td>Estado:</td>
+        <td>
+          <label>{{supplier.state}}</label>
+        </td>
+      </tr>
+      <tr>
+        <td>CEP:</td>
+        <td>
+          <label>{{supplier.postal_code}}</label>
+        </td>
+      </tr>
+      <tr>
+        <td>Bairro:</td>
+        <td>
+          <label>{{supplier.district}}</label>
+        </td>
+      </tr>
+      <tr>
+        <td>País:</td>
+        <td>
+          <label>{{supplier.country}}</label>
+        </td>
+      </tr>
+      <tr>
+        <td>Criado em:</td>
+        <td>
+          <label>{{supplier.created_at}}</label>
+        </td>
+      </tr>
+      <tr>
+        <td>Atualizado em:</td>
+        <td>
+          <label>{{supplier.updated_at}}</label>
+        </td>
+      </tr>
+    </tbody>
+
+    <tbody></tbody>
+  </table>
+</div>
+{% endblock %} {% block footer %}
+<footer class="footer">
+  <div class="container">
+    <span class="text-muted">Desenvolvimento web com Django 2.x</span>
+  </div>
+</footer>
+{% endblock %}

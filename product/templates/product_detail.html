@@ -40,6 +40,14 @@
              </td>
          </tr>
          <tr>
+             <td>Fornecedor:</td>
+             <td>
+                 <label>
+				  <a href="{% url 'supplier-detail' product.supplier.id %}">
+			     {{product.supplier.name}}</a></label>
+             </td>
+         </tr>
+         <tr>
              <td>Descrição:</td>
              <td>
                  <label>{{product.description}}</label>
