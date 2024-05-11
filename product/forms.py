@@ -1,10 +1,16 @@
 from django.forms import ModelForm
+from django import forms
 from .models import Product, Category
 
 
 class ProductForm(ModelForm):
     class Meta:
         model = Product
+        widgets = {
+			'name': forms.TextInput(attrs={'placeholder': 'Nome o produto'}),
+			'description': forms.TextInput(attrs={'placeholder': 'Descrição do produto'}),
+			'quantity': forms.NumberInput(attrs={'placeholder': 'Quantidade de produto'})
+        }
         fields = ['name', 'price', 'category', 'supplier', 'description', 'quantity']
         labels = {
             'name': ("Nome"),
@@ -19,6 +25,9 @@ class ProductForm(ModelForm):
 class CategoryForm(ModelForm):
     class Meta:
         model = Category
+        widgets = {
+            'name': forms.TextInput(attrs={'placeholder': 'Nome da categoria'})
+        }
         fields = ['name']
         labels = {
             'name': ("Nome"),
