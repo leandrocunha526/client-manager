@@ -1,6 +1,7 @@
 from django.db import models
 from supplier.models import Supplier
 
+
 class Category(models.Model):
     class Meta:
         verbose_name_plural = "Categorias"
@@ -21,4 +22,4 @@ class Product(models.Model):
     quantity = models.IntegerField(default=0, null=True, blank=True)
 
     def __str__(self):
-        return self.description
+        return self.name
