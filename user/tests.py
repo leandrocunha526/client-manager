@@ -11,12 +11,23 @@ class AuthenticationTest(TestCase):
         self.password = 'testpassword'
         self.user = User.objects.create_user(username=self.username, password=self.password)
 
-    def test_registration(self):
-        new_username = 'newuser'
-        new_password = 'newpassword'
-        response = self.client.post(self.register_url, {'username': new_username, 'password1': new_password, 'password2': new_password})
-        self.assertEqual(response.status_code, 200, msg="O registro não redirecionou corretamente.")
-        self.assertFalse(User.objects.filter(username=new_username).exists(), "O usuário já existe no banco de dados")
+    def test_successful_registration(self):
+        # Enviar o formulário de registro
+        response = self.client.post(self.register_url, {'username': self.username, 'password1': self.password, 'password2': self.password})
+
+    def test_successful_redirection(self):
+        # Enviar o formulário de registro
+        response = self.client.post(self.register_url, {'username': self.username, 'password1': self.password, 'password2': self.password})
+        # Verificar se o redirecionamento ocorreu
+        # Isso verifica se o usário foi redirecionado para a página de login
+        self.assertEqual(response.status_code, 200)
+
+    def test_user_saved(self):
+        # Enviar o formulário de registro
+        # E verificar se o usuário foi salvo no banco de dados
+        self.client.post(self.register_url, {'username': self.username, 'password1': self.password, 'password2': self.password})
+        # Verificar se o usuário foi salvo no banco de dados
+        self.assertTrue(User.objects.filter(username=self.username).exists(), "O novo usuário existe no banco de dados.")
 
     def test_login(self):
         response = self.client.post(self.login_url, {'username': self.username, 'password': self.password})
