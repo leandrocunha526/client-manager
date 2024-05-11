@@ -10,7 +10,7 @@ class SupplierForm(forms.ModelForm):
             'postal_code': forms.TextInput(
                 attrs={'placeholder': '00000-000'}),
             'street_address': forms.TextInput(attrs={'placeholder': 'Nome da rua'}),
-            'number': forms.TextInput(attrs={'placeholder': 'Número'}),
+            'number': forms.NumberInput(attrs={'placeholder': 'Número da residência'}),
             'city': forms.TextInput(attrs={'placeholder': 'Cidade'}),
             'state': forms.TextInput(attrs={'placeholder': 'Estado'}),
             'district': forms.TextInput(attrs={'placeholder': 'Bairro'}),
