@@ -6,7 +6,6 @@ This project supports the following Python versions and conforms to the Django r
 
 | Python version                                                   | Supported          | Security Support Deadline |
 |------------------------------------------------------------------|--------------------|---------------------------|
-| <= 3.9.x                                                         | :x:                | 27 Jun 2023               |
 | 3.10.x (Ubuntu LTS 22.04)                                        | :white_check_mark: | 04 Oct 2026               |
 | 3.11.x (Debian Bookworm)                                         | :white_check_mark: | 24 Oct 2027               |
 | 3.12.x (Ubuntu 24.04 LTS and others)                             | :white_check_mark: | Oct 2028                  |
