@@ -9,8 +9,8 @@ class ItemSaleInline(admin.TabularInline):
 
 class SaleAdmin(admin.ModelAdmin):
     readonly_fields = ['total',]
-    list_filter = 'person', 'status'
-    list_display = 'id', 'person', 'total', 'datetime', 'status'
+    list_filter = 'client', 'status'
+    list_display = 'id', 'client', 'total', 'datetime', 'status'
     inlines = [ItemSaleInline]
 
     def total(self, obj):

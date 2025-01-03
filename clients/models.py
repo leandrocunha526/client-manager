@@ -1,11 +1,11 @@
 from django.db import models
 
 
-class Person(models.Model):
+class Client(models.Model):
     class Meta:
-        verbose_name_plural = "Pessoas"
-    first_name = models.CharField(max_length=30)
-    last_name = models.CharField(max_length=30)
+        verbose_name_plural = "Clientes"
+    first_name = models.CharField(max_length=80)
+    last_name = models.CharField(max_length=80)
     age = models.IntegerField()
     salary = models.DecimalField(max_digits=8, decimal_places=2)
     biography = models.TextField()

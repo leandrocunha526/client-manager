@@ -5,12 +5,12 @@ from sales.models import Item, Sale
 class SaleForm(ModelForm):
     class Meta:
         model = Sale
-        fields = ['tax', 'discount', 'person', 'datetime', 'status']
+        fields = ['tax', 'discount', 'client', 'datetime', 'status']
         labels = {
             'tax': ("Imposto"),
             'discount': ("Outros descontos (como taxas de envio)"),
             "datetime": ("Data e hora"),
-            "person": ("Clientes"),
+            "client": ("Cliente"),
             'status': ("Estado (status da compra)"),
         }
 

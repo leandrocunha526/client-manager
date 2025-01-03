@@ -18,8 +18,8 @@ def generate_sale_pdf(request, id):
     ["Total", sale.total],
     ["Desconto", sale.discount],
     ["Criado em", sale.datetime],
-    ["Código do cliente", sale.person.id],
-    ["Cliente", sale.person.first_name + ' ' + sale.person.last_name],
+    ["Código do cliente", sale.client.id],
+    ["Cliente", sale.client.first_name + ' ' + sale.client.last_name],
     ["Status", sale.status]]
 
     response = HttpResponse(content_type='application/pdf')

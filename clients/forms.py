@@ -1,10 +1,10 @@
 from django.forms import ModelForm
-from .models import Person
+from .models import Client
 
 
-class PersonForm(ModelForm):
+class ClientForm(ModelForm):
     class Meta:
-        model = Person
+        model = Client
         fields = ['first_name', 'last_name', 'age', 'salary', 'biography', 'photo']
         labels = {
             'first_name': ("Primeiro nome"),

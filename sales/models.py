@@ -3,7 +3,7 @@ from django.db import models
 from django.db.models import Sum, F, FloatField
 from django.db.models.signals import post_save
 from django.dispatch import receiver
-from clients.models import Person
+from clients.models import Client
 from product.models import Product
 from django.utils.translation import gettext_lazy as _
 from .managers import SaleManager
@@ -26,7 +26,7 @@ class Sale(models.Model):
         verbose_name_plural = "Vendas"
     tax = models.DecimalField(max_digits=5, decimal_places=2, default=0, null=True, blank=True)
     discount = models.DecimalField(max_digits=5, decimal_places=2, default=0, null=True, blank=True)
-    person = models.ForeignKey(Person, null=False, blank=False, on_delete=models.PROTECT)
+    client = models.ForeignKey(Client, null=False, blank=False, on_delete=models.PROTECT)
     datetime = models.DateTimeField(default=datetime.now, blank=False, null=False)
     status = models.CharField(max_length=120, default='created', choices=SALE_STATUS_CHOICES)
     total = models.DecimalField(default=0.00, null=False, blank=False, max_digits=100, decimal_places=2)

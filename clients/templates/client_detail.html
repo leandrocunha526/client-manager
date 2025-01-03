@@ -5,55 +5,55 @@
 {% block main %}
 
 <div class="col-8">
-<a href="{% url 'person_new' %}" class="btn btn-primary">Novo cliente</a>
-<a href="{% url 'person_list' %}" class="btn btn-info">Retornar para tabela</a>
+<a href="{% url 'client_new' %}" class="btn btn-primary">Novo cliente</a>
+<a href="{% url 'client_list' %}" class="btn btn-info">Retornar para tabela</a>
 </div>
 
 <div class="col-12">
 <h1>Informações sobre o cliente</h1>
-<p><b>Nome e sobrenome:</b> {{person.first_name}} {{ person.last_name }}</p>
+<p><b>Nome e sobrenome:</b> {{client.first_name}} {{ client.last_name }}</p>
 <table class="table">
          <tbody>
          <tr>
              <td>Código:</td>
              <td>
-                 <label>{{person.id}}</label>
+                 <label>{{client.id}}</label>
              </td>
          </tr>
          <tr>
              <td>Nome:</td>
              <td>
-                 <label>{{person.first_name}}</label>
+                 <label>{{client.first_name}}</label>
              </td>
          </tr>
           <tr>
              <td>Sobrenome:</td>
              <td>
-                 <label>{{person.last_name}}</label>
+                 <label>{{client.last_name}}</label>
              </td>
          </tr>
          <tr>
              <td>Idade:</td>
              <td>
-                 <label>{{person.age}}</label>
+                 <label>{{client.age}}</label>
              </td>
          </tr>
           <tr>
              <td>Salário:</td>
              <td>
-                 <label>{{person.salary}}</label>
+                 <label>{{client.salary}}</label>
              </td>
          </tr>
          <tr>
              <td>Biografia:</td>
              <td>
-                 <label>{{person.biography}}</label>
+                 <label>{{client.biography}}</label>
              </td>
          </tr>
          <tr>
              <td>Imagem:</td>
              <td>
-                 <label><a href=/media/{{person.photo}} target="_blank">Visualizar</a></label>
+                 <label><a href=/media/{{client.photo}} target="_blank">Visualizar</a></label>
              </td>
          </tr>
          <tbody>
@@ -65,7 +65,7 @@
 {% block footer %}
     <footer class="footer">
         <div class="container">
-            <span class="text-muted">Desenvolvimento web com Django 2.x</span>
+            <span class="text-muted">Desenvolvimento web com Django 4.x</span>
         </div>
     </footer>
 {% endblock %}

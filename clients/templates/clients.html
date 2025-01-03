@@ -6,7 +6,7 @@
 
 <div class="col-12">
 <h3>Clientes</h3>
-    <a href="{% url 'person_new' %}" class="btn btn-primary">Novo cliente</a>
+    <a href="{% url 'client_new' %}" class="btn btn-primary">Novo cliente</a>
 <form method="GET" id="search-form">
 <div class="form-group"><h5>Pesquisa</h5></div>
 <div class="form-group">
@@ -30,25 +30,25 @@
              <th class="col">Detalhes</th>
          </tr>
          </thead>
-         {% for person in persons %}
+         {% for client in clients %}
          <tbody>
             <tr>
-                <td scope="row">{{person.id}}</td>
-                <td>{{person.first_name}}</td>
-                <td>{{person.last_name}}</td>
-                <td>{{person.salary}}</td>
+                <td scope="row">{{client.id}}</td>
+                <td>{{client.first_name}}</td>
+                <td>{{client.last_name}}</td>
+                <td>{{client.salary}}</td>
                 <td>
-                    <button type="submit" class="btn btn-warning" onclick="location.href='{% url 'person_update' person.id %}'">
+                    <button type="submit" class="btn btn-warning" onclick="location.href='{% url 'client_update' client.id %}'">
                        Editar
                    </button>
                 </td>
                 <td>
-                   <button type="submit" class="btn btn-danger" onclick="location.href='{% url 'person_delete' person.id %}'">
+                   <button type="submit" class="btn btn-danger" onclick="location.href='{% url 'client_delete' client.id %}'">
                        Delete
                    </button>
                 </td>
                 <td>
-                   <button type="submit" class="btn btn-info" onclick="location.href='{% url 'person_detail' person.id %}'">
+                   <button type="submit" class="btn btn-info" onclick="location.href='{% url 'client_detail' client.id %}'">
                        Detalhes
                    </button>
                 </td>

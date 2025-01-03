@@ -1,14 +1,10 @@
 from django.urls import path
-from .views import persons_list
-from .views import persons_new
-from .views import persons_update
-from .views import persons_delete
-from .views import person_detail
+from clients.views import client_delete, client_detail, client_list, client_new, client_update
 
 urlpatterns = [
-    path('list/', persons_list, name="person_list"),
-    path('new/', persons_new, name="person_new"),
-    path('update/<int:id>/', persons_update, name="person_update"),
-    path('delete/<int:id>/', persons_delete, name="person_delete"),
-    path('detail/<int:id>/', person_detail, name="person_detail")
+    path('list/', client_list, name="client_list"),
+    path('new/', client_new, name="client_new"),
+    path('update/<int:id>/', client_update, name="client_update"),
+    path('delete/<int:id>/', client_delete, name="client_delete"),
+    path('detail/<int:id>/', client_detail, name="client_detail")
 ]
