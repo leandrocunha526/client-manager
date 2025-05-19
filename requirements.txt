@@ -9,7 +9,7 @@ psycopg==3.2.3
 python-dateutil==2.9.0
 python-decouple==3.8
 reportlab==4.2.5
-setuptools==75.6.0
+setuptools==78.1.1
 six==1.17.0
 sqlparse==0.5.3
 static3==0.7.0
