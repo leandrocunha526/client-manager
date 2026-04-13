@@ -4,7 +4,7 @@ dj-static==0.0.6
 Django==4.2.29
 django-bootstrap-form==3.4
 django-storages==1.14.4
-pillow==12.1.1
+pillow==12.2.0
 psycopg==3.2.3
 python-dateutil==2.9.0
 python-decouple==3.8
